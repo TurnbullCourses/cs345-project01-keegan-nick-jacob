@@ -4,6 +4,7 @@ public class BankAccount {
 
     private String email;
     private double balance;
+    private String status;
 
     /**
      * @throws IllegalArgumentException if email is invalid
@@ -12,6 +13,7 @@ public class BankAccount {
         if (isEmailValid(email)){
             this.email = email;
             this.balance = startingBalance;
+            this.status = status;
         }
         else {
             throw new IllegalArgumentException("Email address: " + email + " is invalid, cannot create account");
@@ -24,6 +26,9 @@ public class BankAccount {
 
     public String getEmail(){
         return email;
+    }
+    public String getStatus(){
+        return status;
     }
 
     /**
