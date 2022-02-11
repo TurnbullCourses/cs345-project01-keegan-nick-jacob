@@ -1,10 +1,10 @@
 package edu.ithaca.dturnbull.bank;
 
-public class BankAccount extends BankAdmin {
+public class BankAccount {
 
     private String email;
     private double balance;
-    private String status;
+    public String status;
 
     /**
      * @throws IllegalArgumentException if email is invalid
@@ -13,7 +13,7 @@ public class BankAccount extends BankAdmin {
         if (isEmailValid(email)){
             this.email = email;
             this.balance = startingBalance;
-            this.status = "nu";
+            this.status = "open";
         }
         else {
             throw new IllegalArgumentException("Email address: " + email + " is invalid, cannot create account");
