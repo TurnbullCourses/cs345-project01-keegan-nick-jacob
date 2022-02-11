@@ -40,4 +40,12 @@ class BankAccountTest {
         assertThrows(IllegalArgumentException.class, ()-> new BankAccount("", 100));
     }
 
+    @Test
+    void checkStatusTest(){
+        BankAccount bankAccount = new BankAccount("testmail@mail.com", 350);
+        assertEquals("open" , bankAccount.getStatus());
+        assertEquals("frozen" , bankAccount.getStatus());
+        
+    }
+
 }
