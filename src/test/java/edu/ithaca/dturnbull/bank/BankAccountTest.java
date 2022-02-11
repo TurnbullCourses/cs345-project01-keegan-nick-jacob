@@ -42,10 +42,12 @@ class BankAccountTest {
 
     @Test
     void checkStatusTest(){
-        BankAccount bankAccount = new BankAccount("testmail@mail.com", 350);
-        assertEquals("open" , bankAccount.getStatus());
-        assertEquals("frozen" , bankAccount.getStatus());
-        
+        BankAccount bankAccount = new BankAccount("test@mail.com", 300);
+        bankAccount.openAccount("test@mail.com");
+        assertEquals("open", bankAccount.getStatus());
+        bankAccount.freezeAccount("test@mail.com");
+        assertEquals("closed", bankAccount.getStatus());
+
     }
 
 }
