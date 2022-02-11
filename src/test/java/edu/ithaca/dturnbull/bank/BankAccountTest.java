@@ -14,10 +14,9 @@ class BankAccountTest {
     }
 
     @Test
-    void withdrawTest() throws InsufficientFundsException{
+    void withdrawTest() throws InsufficientFundsException, ClosedAccountException{
         BankAccount bankAccount = new BankAccount("a@b.com", 200);
         bankAccount.withdraw(100);
-
         assertEquals(100, bankAccount.getBalance(), 0.001);
         assertThrows(InsufficientFundsException.class, () -> bankAccount.withdraw(300));
     }
@@ -41,12 +40,26 @@ class BankAccountTest {
     }
 
     @Test
-    void checkStatusTest(){
+    void checkStatusTest() throws ClosedAccountException, InsufficientFundsException{
         BankAccount bankAccount = new BankAccount("test@mail.com", 300);
         BankAdmin admin = new BankAdmin("admin@admin.com");
-        assertEquals("open", bankAccount.getStatus());
-        admin.freezeAccount(bankAccount);
-        assertEquals("closed", bankAccount.getStatus());
+        
+        assertEquals("open", bankAccount.getStatus()); //Test Opens Account
+        admin.freezeAccount(bankAccount); //Closes Account
+        assertEquals("closed", bankAccount.getStatus()); //Test Closes Account
+        assertThrows(ClosedAccountException.class, () -> bankAccount.withdraw(50)); //Test Withdraw from Closed Account
+        admin.openAccount(bankAccount); //Opens Account
+        assertEquals("open", bankAccount.getStatus()); //Test Opens Account
+        bankAccount.withdraw(50); //Test Withdraw from Open Account
+        assertEquals(250, bankAccount.balance); //Check Balance
+
+
+
+
+
+
+
+
     }
 
 }

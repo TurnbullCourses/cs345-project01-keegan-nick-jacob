@@ -2,8 +2,8 @@ package edu.ithaca.dturnbull.bank;
 
 public class BankAccount {
 
-    private String email;
-    private double balance;
+    public String email;
+    public double balance;
     public String status;
 
     /**
@@ -32,14 +32,20 @@ public class BankAccount {
     }
 
     /**
+     * @throws ClosedAccountException
      * @post reduces the balance by amount if amount is non-negative and smaller than balance
      */
-    public void withdraw (double amount) throws InsufficientFundsException{
-        if (amount <= balance){
-            balance -= amount;
+    public void withdraw (double amount) throws InsufficientFundsException, ClosedAccountException{
+        if( this.status == "open"){
+            if (amount <= balance){
+                balance -= amount;
+            }
+            else {
+                throw new InsufficientFundsException("Not enough money");
+            }
         }
-        else {
-            throw new InsufficientFundsException("Not enough money");
+        else{
+            throw new ClosedAccountException("The Account is Frozen");
         }
     }
 
