@@ -12,9 +12,9 @@ Link to UML Class Diagram:
 https://drive.google.com/file/d/1PdkYzLZdGV83-4aXl7sbQxfTrz0pGuQD/view?usp=sharing
 
 Three Use Cases that you will implement first:
-1. -
-2. - 
-3. - 
+1. - Admin, Freeze/Unfreeze
+2. - Customer, Login/Verify
+3. - Teller, Create Account
 
 Which classes & methods do you need to implement for these use cases?
 (Indicated which team member is responsible for the implemenation)
