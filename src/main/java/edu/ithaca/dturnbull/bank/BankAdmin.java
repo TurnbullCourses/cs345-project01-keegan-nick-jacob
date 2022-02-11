@@ -1,5 +1,10 @@
 package edu.ithaca.dturnbull.bank;
 
+/*
+Admin Class
+Functions : Freeze/Unfreeze - CheckAllBalance - CheckAccountType
+*/
+
 //Admin Account can Open/Close bankAccount Objects
 public class BankAdmin {
 
