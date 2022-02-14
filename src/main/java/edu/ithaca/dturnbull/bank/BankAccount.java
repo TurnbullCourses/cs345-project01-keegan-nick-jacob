@@ -5,18 +5,16 @@ public class BankAccount {
     public String email;
     public double balance;
     public String status;
+    public double interestRate;
 
     /**
      * @throws IllegalArgumentException if email is invalid
      */
-    public BankAccount(String email, double startingBalance) {
-        if (isEmailValid(email)) {
-            this.email = email;
-            this.balance = startingBalance;
-            this.status = "open";
-        } else {
-            throw new IllegalArgumentException("Email address: " + email + " is invalid, cannot create account");
-        }
+    public BankAccount(double balance, double interestRate) {
+        
+        this.balance = balance;
+        this.interestRate = interestRate;
+         
     }
 
     public double getBalance() {
@@ -48,11 +46,4 @@ public class BankAccount {
         }
     }
 
-    public static boolean isEmailValid(String email) {
-        if (email.indexOf('@') == -1) {
-            return false;
-        } else {
-            return true;
-        }
-    }
 }
