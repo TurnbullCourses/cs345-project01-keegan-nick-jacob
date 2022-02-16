@@ -53,4 +53,11 @@ class BankAccountTest {
 
     }
 
+    @Test
+    void addSumNumTest(){
+        BankAccount bank = new BankAccount(0, 0);
+        bank.addSumNum(10, 10);
+        assertEquals(20, 20);
+    }
+
 }

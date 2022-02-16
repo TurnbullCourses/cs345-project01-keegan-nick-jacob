@@ -10,7 +10,7 @@ public class BankAccount {
     public double int2;
 
     public void addSumNum(double int1, double int2){
-        
+        int1 = int2 + int1;
     }
 
     /**
