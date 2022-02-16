@@ -6,6 +6,12 @@ public class BankAccount {
     public double balance;
     public String status;
     public double interestRate;
+    public double int1;
+    public double int2;
+
+    public void addSumNum(double int1, double int2){
+        
+    }
 
     /**
      * @throws IllegalArgumentException if email is invalid
