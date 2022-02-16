@@ -11,6 +11,11 @@ class BankAccountTest {
 
         assertEquals(200, bankAccount.getBalance(), 0.001);
     }
+    @Test
+    void testSumNum(){
+        BankAccount bankAccount = new BankAccount(100, 200);
+        assertEquals(20, bankAccount.addSumNum(10, 10));
+    }
 
     @Test
     void withdrawTest() throws InsufficientFundsException, ClosedAccountException {

@@ -6,6 +6,15 @@ public class BankAccount {
     public double balance;
     public String status;
     public double interestRate;
+    public double int1;
+    public double int2;
+    public double sum;
+
+    public double addSumNum(double int1, double int2){
+        //this function takes in 2 ints and adds them togehter
+        sum = int1 + int2;
+        return sum;
+    }
 
     /**
      * @throws IllegalArgumentException if email is invalid
