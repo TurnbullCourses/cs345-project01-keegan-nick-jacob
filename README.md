@@ -18,9 +18,9 @@ Three Use Cases that you will implement first:
 
 Which classes & methods do you need to implement for these use cases?
 (Indicated which team member is responsible for the implemenation)
-1. -
-2. -
-3. -
+1. - Admin class - freeze/unfreeze account / test for all cases - Keegan
+2. - Customer / bankAccount rework - Nick
+3. - Teller / Savings / Checkings - Jacob
 4. -
 5. << add more as needed >>
 
