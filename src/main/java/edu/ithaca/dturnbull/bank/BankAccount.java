@@ -12,7 +12,7 @@ public class BankAccount {
 
     public double addSumNum(double int1, double int2){
         //this function takes in 2 ints and adds them togehter
-        sum = int1 + int2;
+        sum = int2 + int1;
         return sum;
     }
 
