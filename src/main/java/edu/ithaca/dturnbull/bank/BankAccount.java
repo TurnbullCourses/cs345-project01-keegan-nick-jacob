@@ -14,7 +14,6 @@ public class BankAccount {
         //this function takes in 2 ints and adds them togehter
         sum = int1 + int2;
         return sum;
-
     }
 
     /**
