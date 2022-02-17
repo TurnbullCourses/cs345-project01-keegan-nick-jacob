@@ -1,10 +1,13 @@
 package edu.ithaca.dturnbull.bank;
 
 public class BankTeller {
+    
     private BankAccount[] accounts;
 
     public BankTeller(BankAccount[] accountsIn){
+
         accounts = accountsIn;
+
     }
 
     public void openAccount(String accountTypeIn){
@@ -12,7 +15,7 @@ public class BankTeller {
             SavingsAccount savings = new SavingsAccount(0, 0.06);
         }
         else if (accountTypeIn.equals("Checking")){
-            CheckingAccount checking = new CheckingAccount();
+            CheckingAccount checking = new CheckingAccount(0);
         }
     }
 
