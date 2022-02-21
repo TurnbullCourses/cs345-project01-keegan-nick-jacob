@@ -2,7 +2,7 @@ package edu.ithaca.dturnbull.bank;
 
 public class BankAccount {
 
-    public String email;
+    public int ID;
     public double balance;
     public String status;
     public double interestRate;
@@ -14,25 +14,22 @@ public class BankAccount {
         //this function takes in 2 ints and adds them togehter
         sum = int2 + int1;
         return sum;
-
+    
     }
 
     /**
      * @throws IllegalArgumentException if email is invalid
      */
-    public BankAccount(double balance, double interestRate) {
+    public BankAccount(double balance, double interestRate, int ID) {
         
         this.balance = balance;
         this.interestRate = interestRate;
-         
+        this.ID = ID;
+
     }
 
     public double getBalance() {
         return balance;
-    }
-
-    public String getEmail() {
-        return email;
     }
 
     public String getStatus() {
