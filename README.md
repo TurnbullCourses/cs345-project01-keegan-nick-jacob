@@ -11,6 +11,9 @@ https://drive.google.com/file/d/1xfNxnezJDJxAXDSE2lIrhUkt7JyQ-62I/view?usp=shari
 Link to UML Class Diagram:
 https://drive.google.com/file/d/1PdkYzLZdGV83-4aXl7sbQxfTrz0pGuQD/view?usp=sharing
 
+Link to State Diagram:
+https://drive.google.com/file/d/1QSOo8oqT0-YpDUAZomsIBhxGRBRdwj8X/view?usp=sharing
+
 Three Use Cases that you will implement first:
 1. - Admin, Freeze/Unfreeze
 2. - Customer, Login/Verify
