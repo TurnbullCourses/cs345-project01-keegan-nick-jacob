@@ -25,6 +25,7 @@ public class BankAccount {
         this.balance = balance;
         this.interestRate = interestRate;
         this.ID = ID;
+        this.status = "open";
 
     }
 

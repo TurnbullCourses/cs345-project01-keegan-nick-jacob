@@ -1,34 +1,69 @@
-package edu.ithaca.dturnbull.bank;
 
+
+
+/*
+BankTeller Class
+
+//Developed by: by Jacob with updates by Nick 
+Functions : openAccount - closeAccount - newCustomer
+*/
+package edu.ithaca.dturnbull.bank;
 import java.util.ArrayList;
 
 public class BankTeller {
 
-    private ArrayList<BankAccount> accounts = new ArrayList<BankAccount>();
+    public ArrayList<Customer> customerAccounts;
 
-    public BankTeller(ArrayList<BankAccount> accountsIn){
-        accounts = accountsIn;
+    public BankTeller(){
+
+        this.customerAccounts = new ArrayList<Customer>();
+
     }
 
-    public void openAccount(String accountTypeIn){
+    //needs testing 
+    public void openAccount(String accountTypeIn, String customerEmail){
+        
+        //if  there are accounts in customer accounts search for customers profile then add account to their account
+        
         if(accountTypeIn.equals("Savings")){
-            SavingsAccount savings = new SavingsAccount(0, 0.06);
-            savings.ID = accounts.size()+1;
-            accounts.add(savings);
-        }
-        else if (accountTypeIn.equals("Checking")){
-            CheckingAccount checking = new CheckingAccount(0);
-            checking.ID = accounts.size()+1;
-            accounts.add(checking);
-        }
-    }
-
-    public void closeAccount(int accountTypeIn){
-        for (int x = 0; x <= accounts.size(); x++){
-            if (accounts.get(x).ID == accountTypeIn){
-                accounts.remove(x);
+            if (customerAccounts.size() > 0){
+                SavingsAccount savings = new SavingsAccount(0, 0.06);
+                for (int i=0; i<= customerAccounts.size(); i++){
+                    if (customerAccounts.get(i).email == customerEmail){
+                        customerAccounts.get(i).personalAccounts.add(savings);
+                    }
+                }
             }
         }
+        else if (accountTypeIn.equals("Checking")){
+
+            if (customerAccounts.size() > 0){
+
+                if (customerAccounts.size() > 0){
+                    CheckingAccount checking = new CheckingAccount(0);
+                    for (int i=0; i<= customerAccounts.size(); i++){
+                        if (customerAccounts.get(i).email == customerEmail){
+                            customerAccounts.get(i).personalAccounts.add(checking);
+                        }
+                    }
+                }
+
+            }
+        }else{
+            //throws exception "Invalid account type"
+        }
+    }
+
+    //unfinished
+    public void closeAccount(int accountTypeIn){
+        //close account specific account within customers accounts array 
+    }
+
+    public void newCustomer(String name,String email,String password){
+
+        Customer cust = new Customer(name,email,password);//creates new customer based on desired name, email, password
+        customerAccounts.add(cust);//add new created customer 
+
     }
 
     

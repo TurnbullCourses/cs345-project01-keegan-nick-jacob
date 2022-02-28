@@ -2,6 +2,8 @@ package edu.ithaca.dturnbull.bank;
 
 /*
 Admin Class
+
+Written by: Keegan with updates by Nick 
 Functions : Freeze/Unfreeze - CheckAllBalance - CheckAccountType
 */
 
@@ -10,10 +12,8 @@ public class BankAdmin {
 
     // Init vars
     public String status;
-    public String email;
 
-    public BankAdmin(String email) {
-        this.email = email;
+    public BankAdmin() {
     }
 
     // Method will Open a Closed Account
@@ -27,8 +27,8 @@ public class BankAdmin {
     }
 
     // Method will getStatus
-    public String getStatus() {
-        return status;
+    public String getStatus(BankAccount bankAccount) {
+        return bankAccount.status;
     }
 
 }
