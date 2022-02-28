@@ -53,4 +53,20 @@ public class BankAccount_Tests_Integration {
         assertEquals(250, bankAccount.balance); // Check Balance
 
     }
-}
+
+    @Test
+    void LoginTest() throws LoginFailedException{
+
+        BankTeller newTeller = new BankTeller();//cretaes new bank 
+        newTeller.newCustomer("nick", "nicholas@gmail.com", "goodday");
+        newTeller.openAccount("Savings","nicholas@gmail.com");
+        newTeller.openAccount("Checkings","nicholas@gmail.com");
+        assertEquals("nicholas@gmail.com", newTeller.customerAccounts.get(0).email);
+        assertThrows(LoginFailedException.class, () ->  newTeller.customerAccounts.get(0).login("nicholasiaacs4@gmail.com","goodday",newTeller));
+        assertThrows(LoginFailedException.class, () ->  newTeller.customerAccounts.get(0).login("nicholasiaacs4@gmail.com","goday",newTeller));
+        assertThrows(LoginFailedException.class, () ->  newTeller.customerAccounts.get(0).login("nicsmail.com","goodday",newTeller));
+        assertThrows(LoginFailedException.class, () ->  newTeller.customerAccounts.get(0).login("a","b",newTeller));
+        assertEquals("closed", newTeller.customerAccounts.get(0).personalAccounts.get(0).status);
+
+    }
+}s
