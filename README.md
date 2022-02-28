@@ -16,9 +16,9 @@ https://drive.google.com/file/d/1PdkYzLZdGV83-4aXl7sbQxfTrz0pGuQD/view?usp=shari
 Link to State Diagram:
 https://drive.google.com/file/d/1QSOo8oqT0-YpDUAZomsIBhxGRBRdwj8X/view?usp=sharing
 
-Link to Sequence Diagrams:
+Link to Sequence Diagrams: Jacob
 https://drive.google.com/file/d/17LLlA8B8ILFfI7CL23HR5t-ythbr4fux/view?usp=sharing
-Link to Sequence Diagrams:
+Link to Sequence Diagrams: Keegan
 https://drive.google.com/file/d/1SfZIVfFgd4uMwwCXcYf3l_sY91cYs5la/view?usp=sharing
 
 Three Use Cases that you will implement first:
