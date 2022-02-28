@@ -69,4 +69,4 @@ public class BankAccount_Tests_Integration {
         assertEquals("closed", newTeller.customerAccounts.get(0).personalAccounts.get(0).status);
 
     }
-}s
+}
