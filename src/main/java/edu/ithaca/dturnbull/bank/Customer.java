@@ -14,6 +14,7 @@ public class Customer {
         this.name = name;
         this.email = email;
         this.password = password;
+        this.personalAccounts = new ArrayList<BankAccount>();
 
     }
 

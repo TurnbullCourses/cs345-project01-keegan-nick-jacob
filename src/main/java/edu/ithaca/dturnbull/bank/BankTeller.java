@@ -1,6 +1,4 @@
 
-
-
 /*
 BankTeller Class
 
@@ -21,14 +19,13 @@ public class BankTeller {
     }
 
     //needs testing 
-    public void openAccount(String accountTypeIn, String customerEmail){
+    public void openAccount(String accountTypeIn, String customerEmail) throws invalidAccountTypeException{
         
         //if  there are accounts in customer accounts search for customers profile then add account to their account
-        
         if(accountTypeIn.equals("Savings")){
             if (customerAccounts.size() > 0){
                 SavingsAccount savings = new SavingsAccount(0, 0.06);
-                for (int i=0; i<= customerAccounts.size(); i++){
+                for (int i=0; i < customerAccounts.size(); i++){
                     if (customerAccounts.get(i).email == customerEmail){
                         customerAccounts.get(i).personalAccounts.add(savings);
                     }
@@ -50,20 +47,43 @@ public class BankTeller {
 
             }
         }else{
-            //throws exception "Invalid account type"
+            throw new invalidAccountTypeException("Invalid Account Type");
         }
     }
+    public void closeAccount(String accountTypeIn, String customerEmail, int accountnum) throws invalidAccountTypeException{
+        
+        if(accountTypeIn.equals("Savings")){
+            if (customerAccounts.size() > 0){
+                for (int i=0; i<= customerAccounts.size(); i++){
+                    if (customerAccounts.get(i).email == customerEmail){
+                        customerAccounts.get(i).personalAccounts.remove(accountnum);
+                    }
+                }
+            }
+        }
+        else if (accountTypeIn.equals("Checking")){
 
-    //unfinished
-    public void closeAccount(int accountTypeIn){
-        //close account specific account within customers accounts array 
+            if (customerAccounts.size() > 0){
+
+                if (customerAccounts.size() > 0){
+                    for (int i=0; i<= customerAccounts.size(); i++){
+                        if (customerAccounts.get(i).email == customerEmail){
+                            customerAccounts.get(i).personalAccounts.remove(accountnum);
+                        }
+                    }
+                }
+
+            }
+            else{
+                throw new invalidAccountTypeException("Invalid Account Type");
+            }
+        }
     }
 
     public void newCustomer(String name,String email,String password){
 
         Customer cust = new Customer(name,email,password);//creates new customer based on desired name, email, password
         customerAccounts.add(cust);//add new created customer 
-
     }
 
     

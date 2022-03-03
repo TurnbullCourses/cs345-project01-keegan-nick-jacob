@@ -1,10 +1,9 @@
 package edu.ithaca.dturnbull.bank;
 
-public class ClosedAccountException extends Exception{
+public class invalidAccountTypeException extends Exception {
     private static final long serialVersionUID = 1L;
     
-    public ClosedAccountException(String s) {
+    public invalidAccountTypeException(String s) {
         super(s);
     }
-
 }

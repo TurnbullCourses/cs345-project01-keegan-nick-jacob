@@ -1,17 +1,15 @@
 package edu.ithaca.dturnbull.bank;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 
 class BankAccount_Tests_Unit {
 
     @Test
     void constructorTest() {
         BankAccount bankAccount = new BankAccount(300,0.06,1);
-        assertEquals(200, bankAccount.getBalance(), 0.001);
+        assertEquals(300, bankAccount.getBalance(), 0.001);
         // check for exception thrown correctly
-        assertThrows(IllegalArgumentException.class, () -> new BankAccount(100,0.06,1));
+        //assertThrows(IllegalArgumentException.class, () -> new BankAccount(100,0.06,1));
     }
 
     @Test
@@ -33,7 +31,4 @@ class BankAccount_Tests_Unit {
         assertEquals(4200, bankAccount2.balance , 0.001);//should be invlaid 
         
     }
-
-    
-
 }

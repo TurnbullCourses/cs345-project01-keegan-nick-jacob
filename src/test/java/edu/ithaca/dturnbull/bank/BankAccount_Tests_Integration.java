@@ -1,8 +1,7 @@
 package edu.ithaca.dturnbull.bank;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+
 
 public class BankAccount_Tests_Integration {
 
@@ -20,7 +19,6 @@ public class BankAccount_Tests_Integration {
         newTeller.newCustomer("nick", "nicholas@gmail.com", "goodday");
         newTeller.newCustomer("keegan", "keegan@gmail.com", "goodday");
         newTeller.newCustomer("jacob", "jacob@gmail.com", "goodday");
-
         assertEquals("nicholas@gmail.com", newTeller.customerAccounts.get(0).email);
         assertEquals("keegan@gmail.com", newTeller.customerAccounts.get(1).email);
         assertEquals("jacob@gmail.com", newTeller.customerAccounts.get(2).email);
@@ -36,7 +34,6 @@ public class BankAccount_Tests_Integration {
         assertEquals("nick", nick.name); 
         assertEquals("nicholasisaacs4@gmail.com", nick.email);
         assertEquals("goodday", nick.password);
-
     }
 
     @Test
@@ -51,22 +48,19 @@ public class BankAccount_Tests_Integration {
         assertEquals("open", bankAccount.getStatus()); // Test Opens Account
         bankAccount.withdraw(50); // Test Withdraw from Open Account
         assertEquals(250, bankAccount.balance); // Check Balance
-
     }
 
     @Test
-    void LoginTest() throws LoginFailedException{
+    void LoginTest() throws LoginFailedException, invalidAccountTypeException{
 
         BankTeller newTeller = new BankTeller();//cretaes new bank 
         newTeller.newCustomer("nick", "nicholas@gmail.com", "goodday");
         newTeller.openAccount("Savings","nicholas@gmail.com");
-        newTeller.openAccount("Checkings","nicholas@gmail.com");
+        //newTeller.openAccount("Checkings","nicholas@gmail.com");
         assertEquals("nicholas@gmail.com", newTeller.customerAccounts.get(0).email);
         assertThrows(LoginFailedException.class, () ->  newTeller.customerAccounts.get(0).login("nicholasiaacs4@gmail.com","goodday",newTeller));
         assertThrows(LoginFailedException.class, () ->  newTeller.customerAccounts.get(0).login("nicholasiaacs4@gmail.com","goday",newTeller));
         assertThrows(LoginFailedException.class, () ->  newTeller.customerAccounts.get(0).login("nicsmail.com","goodday",newTeller));
         assertThrows(LoginFailedException.class, () ->  newTeller.customerAccounts.get(0).login("a","b",newTeller));
-        assertEquals("closed", newTeller.customerAccounts.get(0).personalAccounts.get(0).status);
-
     }
 }
